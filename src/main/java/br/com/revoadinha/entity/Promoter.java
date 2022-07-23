@@ -1,7 +1,6 @@
 package br.com.revoadinha.entity;
 
-import java.util.Random;
-
+import br.com.revoadinha.utils.FakeData;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,13 +15,6 @@ public class Promoter {
 	Evento evento;
 	
 	public static Promoter mock() {
-		switch (new Random().nextInt(4)) {
-		case 1:
-			return new Promoter("AlgoEventos", "143259843985", Evento.mock());
-		case 2:
-			return new Promoter("OutraCoisaRevoadas", "98435759843", Evento.mock());
-		default:
-			return new Promoter("EventosTops", "392847938424", Evento.mock());
-		}
+		return new Promoter(FakeData.getFaker().company().name(), FakeData.getFaker().idNumber().ssnValid(), Evento.mock());
 	}
 }
