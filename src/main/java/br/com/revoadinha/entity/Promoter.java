@@ -18,9 +18,11 @@ public class Promoter {
 	public static Promoter mock() {
 		switch (new Random().nextInt(4)) {
 		case 1:
-			return new Promoter("AlgoEventos", "143259843985", null);
+			return new Promoter("AlgoEventos", "143259843985", Evento.mock());
+		case 2:
+			return new Promoter("OutraCoisaRevoadas", "98435759843", Evento.mock());
 		default:
-			return new Promoter(null, null, null);
+			return new Promoter("EventosTops", "392847938424", Evento.mock());
 		}
 	}
 }

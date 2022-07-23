@@ -12,4 +12,8 @@ public class Participante {
 
 	Cliente cliente;
 	Preferencia preferencia;
+	
+	public static Participante mock() {
+		return new Participante(Cliente.mock(), Preferencia.mock());
+	}
 }
